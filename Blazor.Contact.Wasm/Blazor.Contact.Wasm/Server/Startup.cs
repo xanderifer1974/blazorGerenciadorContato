@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Data;
 using System.Linq;
 
 namespace Blazor.Contact.Wasm.Server
@@ -26,6 +27,10 @@ namespace Blazor.Contact.Wasm.Server
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            //services.AddSingleton<IDbConnection>((sp) =>
+            //{
+            //    return new SqlConnection;
+            //});
             services.AddScoped<IContactRepository,  ContactRepository>();
         }
 
