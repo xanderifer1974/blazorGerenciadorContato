@@ -1,11 +1,12 @@
 ﻿using Blazor.Contacts.Wasm.Repositories.Models;
+using Dapper;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 
 namespace Blazor.Contacts.Wasm.Repositories
 {
-    public class ContactRepository: IContactRepository
+    public class ContactRepository : IContactRepository
     {
         private readonly IDbConnection _dbConnection;
 
@@ -29,14 +30,25 @@ namespace Blazor.Contacts.Wasm.Repositories
             throw new System.NotImplementedException();
         }
 
-        public async  Task<bool> InsertContact(Contact contato)
+        public async Task<bool> InsertContact(Contact contato)
         {
             try
             {
                 var sql = @"INSERT INTO Contacts(FirstName,LastName,Phone,Address)
                           VALUE(@FirstName,@LastName,@Phone,@Address)";
-                
-                
+
+                var result = await _dbConnection.ExecuteAsync(
+                    sql, new
+                    {
+                        contato.FirstName,
+                        contato.LastName,
+                        contato.Phone,
+                        contato.Address
+                    });
+
+                return result > 0;
+
+
             }
             catch (System.Exception)
             {
