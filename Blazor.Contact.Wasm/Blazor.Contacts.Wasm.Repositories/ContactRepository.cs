@@ -20,7 +20,7 @@ namespace Blazor.Contacts.Wasm.Repositories
             var sql = @"DELETE FROM Contacts
                         WHERE Id = @Id ";
 
-            var result = await _dbConnection;
+            var result = await _dbConnection.ExecuteAsync(sql, new { Id = id });
         }
 
         public async Task<IEnumerable<Contact>> GetAllContacts()
