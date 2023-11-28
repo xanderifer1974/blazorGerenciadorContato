@@ -30,7 +30,7 @@ namespace Blazor.Contact.Wasm.Server
             services.AddRazorPages();
             services.AddSingleton<IDbConnection>((sp) =>
             {
-                return new SqlConnection();
+                return new SqlConnection(Configuration.GetConnectionString("DefaultConnection"));
             });
             services.AddScoped<IContactRepository,  ContactRepository>();
         }
