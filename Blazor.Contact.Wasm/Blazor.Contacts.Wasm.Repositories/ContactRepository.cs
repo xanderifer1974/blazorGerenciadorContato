@@ -29,9 +29,20 @@ namespace Blazor.Contacts.Wasm.Repositories
             throw new System.NotImplementedException();
         }
 
-        public Task<bool> InsertContact(Contact contato)
+        public async  Task<bool> InsertContact(Contact contato)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                var sql = @"INSERT INTO Contacts(FirstName,LastName,Phone,Address)
+                          VALUE(@FirstName,@LastName,@Phone,@Address)";
+                
+                
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
         }
 
         public Task<bool> UpdateContact(Contact contato)
