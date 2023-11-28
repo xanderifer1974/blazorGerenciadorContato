@@ -25,9 +25,20 @@ namespace Blazor.Contacts.Wasm.Repositories
             throw new System.NotImplementedException();
         }
 
-        public Task<Contact> GetContactById(int id)
+        public async Task<Contact> GetContactById(int id)
         {
-            throw new System.NotImplementedException();
+            var sql = @" SELECT Id
+                                ,FirstName
+                                ,LastName
+                                ,Phone
+                                ,Address
+                           FROM  Contacts
+                           WHERE Id = @Id";
+
+
+            return await _dbConnection.QueryFirstOrDefaultAsync<Contact>(sql,
+                new {Id = id});
+
         }
 
         public async Task<bool> InsertContact(Contact contato)
