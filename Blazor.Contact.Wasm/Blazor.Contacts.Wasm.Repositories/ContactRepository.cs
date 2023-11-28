@@ -20,9 +20,19 @@ namespace Blazor.Contacts.Wasm.Repositories
             throw new System.NotImplementedException();
         }
 
-        public Task<IEnumerable<Contact>> GetAllContacts()
+        public async Task<IEnumerable<Contact>> GetAllContacts()
         {
-            throw new System.NotImplementedException();
+            var sql = @" SELECT Id
+                                ,FirstName
+                                ,LastName
+                                ,Phone
+                                ,Address
+                           FROM  Contacts
+                           WHERE Id = @Id";
+
+
+            return await _dbConnection.QueryAsync<Contact>(sql,
+                new { });
         }
 
         public async Task<Contact> GetContactById(int id)
