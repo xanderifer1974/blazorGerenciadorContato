@@ -57,9 +57,35 @@ namespace Blazor.Contacts.Wasm.Repositories
             }
         }
 
-        public Task<bool> UpdateContact(Contact contato)
+        public async Task<bool> UpdateContact(Contact contato)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                var sql = @"UPDATE Contacts SET 
+                            FirstName = @FirstName,
+                            LastName = @LastName,
+                            Phone = @Phone,
+                            Address = @Address )
+                            WHERE Id = @Id";
+
+
+                var result = await _dbConnection.ExecuteAsync(
+                    sql, new
+                    {
+                        contato.FirstName,
+                        contato.LastName,
+                        contato.Phone,
+                        contato.Address,
+                        contato.Id
+                    });
+
+                return result > 0;
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
