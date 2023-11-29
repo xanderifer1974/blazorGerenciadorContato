@@ -1,4 +1,4 @@
-﻿namespace Blazor.Contacts.Wasm.Repositories.Models
+﻿namespace Blazor.Contact.Wasm.Shared
 {
     public class Contato
     {

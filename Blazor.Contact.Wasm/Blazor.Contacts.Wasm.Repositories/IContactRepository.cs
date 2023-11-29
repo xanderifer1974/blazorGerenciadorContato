@@ -1,4 +1,4 @@
-﻿using Blazor.Contacts.Wasm.Repositories.Models;
+﻿using Blazor.Contact.Wasm.Shared;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

@@ -1,5 +1,5 @@
-﻿using Blazor.Contacts.Wasm.Repositories;
-using Blazor.Contacts.Wasm.Repositories.Models;
+﻿using Blazor.Contact.Wasm.Shared;
+using Blazor.Contacts.Wasm.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
