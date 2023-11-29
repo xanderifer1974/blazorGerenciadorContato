@@ -74,7 +74,7 @@ namespace Blazor.Contact.Wasm.Server.Controllers
             return await _contactRepository.GetContactById(id);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task Delete(int id)
         {
             await _contactRepository.DeleteContact(id);

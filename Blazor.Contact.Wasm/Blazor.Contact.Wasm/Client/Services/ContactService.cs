@@ -1,6 +1,7 @@
 ﻿using Blazor.Contact.Wasm.Shared;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 namespace Blazor.Contact.Wasm.Client.Services
@@ -15,24 +16,27 @@ namespace Blazor.Contact.Wasm.Client.Services
         }
 
 
-        public Task DeleteContact(int id)
+        public async Task DeleteContact(int id)
         {
-            throw new System.NotImplementedException();
+            await _httpClient.DeleteAsync($"api/contacts/{id}");
         }
 
-        public Task<IEnumerable<Contato>> GetAll()
+        public async Task<IEnumerable<Contato>> GetAll()
         {
-            throw new System.NotImplementedException();
+            return await _httpClient.GetFromJsonAsync<IEnumerable<Contato>>($"api/contacts");
         }
 
-        public Task<Contato> GetById(int id)
+        public async Task<Contato> GetById(int id)
         {
-            throw new System.NotImplementedException();
+            return await _httpClient.GetFromJsonAsync<Contato>($"api/contacts/{id}"); 
         }
 
-        public Task SaveContact(Contato contact)
+        public async Task SaveContact(Contato contact)
         {
-            throw new System.NotImplementedException();
+            if (contact.Id == 0)
+                await _httpClient.PostAsJsonAsync<Contato>($"api/contacts",contact);
+            else
+                await _httpClient.PutAsJsonAsync<Contato>($"api/contacts/{contact.Id}", contact);
         }
     }
 }
