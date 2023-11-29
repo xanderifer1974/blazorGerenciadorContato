@@ -6,14 +6,14 @@ namespace Blazor.Contacts.Wasm.Repositories
 {
     public  interface IContactRepository
     {
-        Task<bool> InsertContact(Contact contato);
+        Task<bool> InsertContact(Contato contato);
 
-        Task<bool> UpdateContact(Contact contato);
+        Task<bool> UpdateContact(Contato contato);
 
         Task DeleteContact(int id);
 
-        Task<IEnumerable<Contact>> GetAllContacts();
+        Task<IEnumerable<Contato>> GetAllContacts();
 
-        Task<Contact> GetContactById(int id);
+        Task<Contato> GetContactById(int id);
     }
 }

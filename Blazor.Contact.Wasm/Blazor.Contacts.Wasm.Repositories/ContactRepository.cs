@@ -23,7 +23,7 @@ namespace Blazor.Contacts.Wasm.Repositories
             var result = await _dbConnection.ExecuteAsync(sql, new { Id = id });
         }
 
-        public async Task<IEnumerable<Contact>> GetAllContacts()
+        public async Task<IEnumerable<Contato>> GetAllContacts()
         {
             var sql = @" SELECT Id
                                 ,FirstName
@@ -34,11 +34,11 @@ namespace Blazor.Contacts.Wasm.Repositories
                            WHERE Id = @Id";
 
 
-            return await _dbConnection.QueryAsync<Contact>(sql,
+            return await _dbConnection.QueryAsync<Contato>(sql,
                 new { });
         }
 
-        public async Task<Contact> GetContactById(int id)
+        public async Task<Contato> GetContactById(int id)
         {
             var sql = @" SELECT Id
                                 ,FirstName
@@ -49,12 +49,12 @@ namespace Blazor.Contacts.Wasm.Repositories
                            WHERE Id = @Id";
 
 
-            return await _dbConnection.QueryFirstOrDefaultAsync<Contact>(sql,
+            return await _dbConnection.QueryFirstOrDefaultAsync<Contato>(sql,
                 new {Id = id});
 
         }
 
-        public async Task<bool> InsertContact(Contact contato)
+        public async Task<bool> InsertContact(Contato contato)
         {
             try
             {
@@ -81,7 +81,7 @@ namespace Blazor.Contacts.Wasm.Repositories
             }
         }
 
-        public async Task<bool> UpdateContact(Contact contato)
+        public async Task<bool> UpdateContact(Contato contato)
         {
             try
             {

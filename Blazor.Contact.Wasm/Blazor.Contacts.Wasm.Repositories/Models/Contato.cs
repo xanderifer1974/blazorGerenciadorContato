@@ -1,6 +1,6 @@
 ﻿namespace Blazor.Contacts.Wasm.Repositories.Models
 {
-    public class Contact
+    public class Contato
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
