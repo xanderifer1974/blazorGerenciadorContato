@@ -3,6 +3,14 @@
 
 @Message
 
+<table>
+    <tbody>
+        <tr>
+            <td colspan="2"><a href="/contactdetails">Add New</a></td>
+        </tr>
+    </tbody>
+</table>
+
 @if (Contacts == null)
 {
     <p> <em>Loading...</em></p>
@@ -27,7 +35,7 @@ else
                     <td>@contact.Phone</td>
                     <td>@contact.Address</td>
                     <td><a href="/contactdetails/@contact.Id">Edit</a></td>
-                    <td></td>
+                    <td><a href="/contactdelete//@contact.Id">Delete</a></td>
                 </tr>
             }
         </tbody>

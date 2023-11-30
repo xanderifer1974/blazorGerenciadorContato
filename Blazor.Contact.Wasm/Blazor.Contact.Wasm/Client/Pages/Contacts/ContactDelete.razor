@@ -1,0 +1,52 @@
+﻿@page "/contactdelete/{id:int}"
+
+@if (Contact == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm Model="Contact" OnValidSubmit="Delete">
+        <div class="card">
+            <h5 class="card-header">Contact Detail</h5>
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="">First Name</label>
+                            <InputText class="form-control" @bind-Value="@Contact.FirstName"></InputText>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="">Last Name</label>
+                            <InputText class="form-control" @bind-Value="@Contact.LastName"></InputText>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="">Phone</label>
+                            <InputText class="form-control" @bind-Value="@Contact.Phone"></InputText>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="">Address</label>
+                            <InputTextArea class="form-control" @bind-Value="@Contact.Address"></InputTextArea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <input type="submit" class="btn btn-danger" value="Delete" />
+                            <input type="button" class="btn btn-secondary" value="Cancel" @onclick="NavigateHome" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </EditForm>
+}

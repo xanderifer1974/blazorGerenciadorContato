@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Blazor.Contact.Wasm.Client.Pages.Contacts
 {
-    public partial class  ContactDetails
+    public partial class ContactDelete
     {
         [Inject]
         public IContactService ContactService { get; set; }
@@ -18,17 +18,14 @@ namespace Blazor.Contact.Wasm.Client.Pages.Contacts
         [Parameter]
         public int id { get; set; }
 
-        protected  async override Task OnInitializedAsync()
+        protected async override Task OnInitializedAsync()
         {
-            if (id == 0)
-                Contact = new Contato();
-            else
-                Contact = await ContactService.GetById(id);
+           Contact = await ContactService.GetById(id);
         }
 
-        protected async Task Save()
+        protected async Task Delete()
         {
-            await ContactService.SaveContact(Contact);
+            await ContactService.DeleteContact(id);
             NavigateHome();
         }
 
