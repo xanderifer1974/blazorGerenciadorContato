@@ -1,0 +1,35 @@
+﻿
+<h3>Contacts</h3>
+
+@Message
+
+@if (Contacts == null)
+{
+    <p> <em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var contact in Contacts)
+            {
+                <tr>
+                    <td>@contact.FullName</td>
+                    <td>@contact.Phone</td>
+                    <td>@contact.Address</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -30,8 +30,7 @@ namespace Blazor.Contacts.Wasm.Repositories
                                 ,LastName
                                 ,Phone
                                 ,Address
-                           FROM  Contacts
-                           WHERE Id = @Id";
+                           FROM  Contacts";
 
 
             return await _dbConnection.QueryAsync<Contato>(sql,
