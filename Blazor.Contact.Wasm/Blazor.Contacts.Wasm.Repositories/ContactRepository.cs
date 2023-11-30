@@ -59,7 +59,7 @@ namespace Blazor.Contacts.Wasm.Repositories
             try
             {
                 var sql = @"INSERT INTO Contacts(FirstName,LastName,Phone,Address)
-                          VALUE(@FirstName,@LastName,@Phone,@Address)";
+                          VALUES (@FirstName,@LastName,@Phone,@Address)";
 
                 var result = await _dbConnection.ExecuteAsync(
                     sql, new

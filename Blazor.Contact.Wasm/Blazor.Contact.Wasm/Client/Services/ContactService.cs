@@ -18,25 +18,25 @@ namespace Blazor.Contact.Wasm.Client.Services
 
         public async Task DeleteContact(int id)
         {
-            await _httpClient.DeleteAsync($"api/contacts/{id}");
+            await _httpClient.DeleteAsync($"api/contact/{id}");
         }
 
         public async Task<IEnumerable<Contato>> GetAll()
         {
-            return await _httpClient.GetFromJsonAsync<IEnumerable<Contato>>($"api/contacts");
+            return await _httpClient.GetFromJsonAsync<IEnumerable<Contato>>($"api/contact");
         }
 
         public async Task<Contato> GetById(int id)
         {
-            return await _httpClient.GetFromJsonAsync<Contato>($"api/contacts/{id}"); 
+            return await _httpClient.GetFromJsonAsync<Contato>($"api/contact/{id}"); 
         }
 
         public async Task SaveContact(Contato contact)
         {
             if (contact.Id == 0)
-                await _httpClient.PostAsJsonAsync<Contato>($"api/contacts",contact);
+                await _httpClient.PostAsJsonAsync<Contato>($"api/contact",contact);
             else
-                await _httpClient.PutAsJsonAsync<Contato>($"api/contacts/{contact.Id}", contact);
+                await _httpClient.PutAsJsonAsync<Contato>($"api/contact/{contact.Id}", contact);
         }
     }
 }

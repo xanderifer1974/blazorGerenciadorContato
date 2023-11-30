@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Contact.Wasm.Server", "Blazor.Contact.Wasm\Server\Blazor.Contact.Wasm.Server.csproj", "{3A85FBB2-A31F-4CCE-B327-E54C6EC31904}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Contact.Wasm.Server", "Blazor.Contact.Wasm\Server\Blazor.Contact.Wasm.Server.csproj", "{3A85FBB2-A31F-4CCE-B327-E54C6EC31904}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Contact.Wasm.Client", "Blazor.Contact.Wasm\Client\Blazor.Contact.Wasm.Client.csproj", "{EA5F45C0-E808-4D28-B007-3425DBBE3CAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Contact.Wasm.Client", "Blazor.Contact.Wasm\Client\Blazor.Contact.Wasm.Client.csproj", "{EA5F45C0-E808-4D28-B007-3425DBBE3CAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Contact.Wasm.Shared", "Blazor.Contact.Wasm\Shared\Blazor.Contact.Wasm.Shared.csproj", "{FB013362-3B2E-4B1E-90BF-CB168EB4AA1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Contact.Wasm.Shared", "Blazor.Contact.Wasm\Shared\Blazor.Contact.Wasm.Shared.csproj", "{FB013362-3B2E-4B1E-90BF-CB168EB4AA1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Contacts.Wasm.Repositories", "Blazor.Contacts.Wasm.Repositories\Blazor.Contacts.Wasm.Repositories.csproj", "{5ED1ACB7-36CA-4523-B1EA-65E9E1D6DFBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Contacts.Wasm.Repositories", "Blazor.Contacts.Wasm.Repositories\Blazor.Contacts.Wasm.Repositories.csproj", "{5ED1ACB7-36CA-4523-B1EA-65E9E1D6DFBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
