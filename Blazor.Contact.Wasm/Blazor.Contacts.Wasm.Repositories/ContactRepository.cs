@@ -88,7 +88,7 @@ namespace Blazor.Contacts.Wasm.Repositories
                             FirstName = @FirstName,
                             LastName = @LastName,
                             Phone = @Phone,
-                            Address = @Address )
+                            Address = @Address
                             WHERE Id = @Id";
 
 
