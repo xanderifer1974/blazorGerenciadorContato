@@ -16,7 +16,7 @@
 }
 else
 {
-    <RadzenGrid AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+   @*  <RadzenGrid AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
                 FilterMode="FilterMode.Advanced" AllowPaging="true" PageSize="4" AllowSorting="true" Data="@Contacts" TItem="@Contato" ColumnWidth="200px">
 
         <Columns>
@@ -35,10 +35,10 @@ else
             </RadzenDataGridColumn>
         </Columns>
 
-    </RadzenGrid>
+    </RadzenGrid> *@
 
 
-     @* <table class="table">
+     <table class="table">
         <thead>
             <tr>
                 <th>Name</th>
@@ -60,5 +60,5 @@ else
                 </tr>
             }
         </tbody>
-    </table> *@
+    </table>
 }
