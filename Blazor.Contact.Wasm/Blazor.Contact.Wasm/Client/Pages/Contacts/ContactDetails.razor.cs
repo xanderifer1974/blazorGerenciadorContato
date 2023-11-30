@@ -15,9 +15,15 @@ namespace Blazor.Contact.Wasm.Client.Pages.Contacts
 
         public Contato Contact { get; set; }
 
+        [Parameter]
+        public int id { get; set; }
+
         protected  async override Task OnInitializedAsync()
         {
-            Contact = new Contato();
+            if(id ==0)
+                 Contact = new Contato();
+            else
+                Contact = await ContactService.GetById(id);
         }
 
         protected async Task Save()
