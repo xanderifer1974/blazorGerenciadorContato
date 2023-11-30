@@ -14,7 +14,7 @@ namespace Blazor.Contact.Wasm.Client.Pages.Contacts
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
-        public IEnumerable<Contato> Contacts { get; set; }
+        public IEnumerable<Contato> Contacts { get; set; }        
 
         public string Message { get; set; }
 
