@@ -16,14 +16,13 @@
 }
 else
 {
-    <RadzenGrid AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                FilterMode="FilterMode.Advanced" AllowPaging="true" PageSize="4" 
-                AllowSorting="true" Data="@Contacts" TItem="Contato" ColumnWidth="200px">
-
+    <RadzenDataGrid AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                    FilterMode="FilterMode.Advanced" AllowPaging="true" PageSize="4"
+                    AllowSorting="true" Data="@Contacts" TItem="Contato" ColumnWidth="200px">
         <Columns>
-            <RadzenDataGridColumn TItem="Contato" Property="FullName" Title="Name" />
-            <RadzenDataGridColumn TItem="Contato" Property="Phone" Title="Phone" />
-            <RadzenDataGridColumn TItem="Contato" Property="Address" Title="Address" />
+            <RadzenDataGridColumn TItem="Contato" Property="FullName" Title="Name"   />
+            <RadzenDataGridColumn TItem="Contato" Property="Phone" Title="Phone"  />
+            <RadzenDataGridColumn TItem="Contato" Property="Address" Title="Address"  />
             <RadzenDataGridColumn TItem="Contato" Title="Edit">
                 <Template Context="data">
                     <RadzenLink Path="@($"/contactdetails/{data.Id}")" Text="Edit"></RadzenLink>
@@ -35,31 +34,5 @@ else
                 </Template>
             </RadzenDataGridColumn>
         </Columns>
-
-    </RadzenGrid>
-
-
-    @*  <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Address</th>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var contact in Contacts)
-            {
-                <tr>
-                    <td>@contact.FullName</td>
-                    <td>@contact.Phone</td>
-                    <td>@contact.Address</td>
-                    <td><a href="/contactdetails/@contact.Id">Edit</a></td>
-                    <td><a href="/contactdelete/@contact.Id">Delete</a></td>
-                </tr>
-            }
-        </tbody>
-    </table> *@
+    </RadzenDataGrid>    
 }
